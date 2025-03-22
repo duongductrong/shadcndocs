@@ -2,7 +2,7 @@
 
 import { SidebarIcon } from "lucide-react"
 
-import { SearchForm } from "@/registry/default/blocks/sidebar-16/components/search-form"
+import { SearchForm } from "@/registry/new-york/blocks/sidebar-16/components/search-form"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -10,10 +10,10 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/registry/default/ui/breadcrumb"
-import { Button } from "@/registry/default/ui/button"
-import { Separator } from "@/registry/default/ui/separator"
-import { useSidebar } from "@/registry/default/ui/sidebar"
+} from "@/registry/new-york/ui/breadcrumb"
+import { Button } from "@/registry/new-york/ui/button"
+import { Separator } from "@/registry/new-york/ui/separator"
+import { useSidebar } from "@/registry/new-york/ui/sidebar"
 
 export function SiteHeader() {
   const { toggleSidebar } = useSidebar()

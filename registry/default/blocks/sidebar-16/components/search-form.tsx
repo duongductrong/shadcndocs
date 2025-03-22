@@ -1,7 +1,7 @@
 import { Search } from "lucide-react"
 
-import { Label } from "@/registry/default/ui/label"
-import { SidebarInput } from "@/registry/default/ui/sidebar"
+import { Label } from "@/registry/new-york/ui/label"
+import { SidebarInput } from "@/registry/new-york/ui/sidebar"
 
 export function SearchForm({ ...props }: React.ComponentProps<"form">) {
   return (

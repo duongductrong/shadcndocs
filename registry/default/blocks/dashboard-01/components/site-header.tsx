@@ -1,5 +1,5 @@
-import { Separator } from "@/registry/default/ui/separator"
-import { SidebarTrigger } from "@/registry/default/ui/sidebar"
+import { Separator } from "@/registry/new-york/ui/separator"
+import { SidebarTrigger } from "@/registry/new-york/ui/sidebar"
 
 export function SiteHeader() {
   return (

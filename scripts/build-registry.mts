@@ -84,7 +84,7 @@ async function syncStyles() {
         await fs.mkdir(path.dirname(targetPath), { recursive: true })
         await fs.copyFile(sourcePath, targetPath)
 
-        // Replace all @/registry/new-york/ with @/registry/default/.
+        // Replace all @/registry/new-york/ with @/registry/new-york/.
         const content = await fs.readFile(targetPath, "utf8")
         const fixedContent = content.replace(
           new RegExp(`@/registry/${sourceStyle}/`, "g"),

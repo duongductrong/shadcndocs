@@ -16,7 +16,7 @@ import {
 import {
   DropdownMenuContent,
   DropdownMenuItem,
-} from "@/registry/default/ui/dropdown-menu"
+} from "@/registry/new-york/ui/dropdown-menu"
 import {
   Avatar,
   AvatarFallback,

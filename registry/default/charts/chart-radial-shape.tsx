@@ -16,8 +16,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/registry/default/ui/card"
-import { ChartConfig, ChartContainer } from "@/registry/default/ui/chart"
+} from "@/registry/new-york/ui/card"
+import { ChartConfig, ChartContainer } from "@/registry/new-york/ui/chart"
 
 export const description = "A radial chart with a custom shape"
 

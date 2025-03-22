@@ -19,10 +19,10 @@ import {
   UsersIcon,
 } from "lucide-react"
 
-import { NavDocuments } from "@/registry/default/blocks/dashboard-01/components/nav-documents"
-import { NavMain } from "@/registry/default/blocks/dashboard-01/components/nav-main"
-import { NavSecondary } from "@/registry/default/blocks/dashboard-01/components/nav-secondary"
-import { NavUser } from "@/registry/default/blocks/dashboard-01/components/nav-user"
+import { NavDocuments } from "@/registry/new-york/blocks/dashboard-01/components/nav-documents"
+import { NavMain } from "@/registry/new-york/blocks/dashboard-01/components/nav-main"
+import { NavSecondary } from "@/registry/new-york/blocks/dashboard-01/components/nav-secondary"
+import { NavUser } from "@/registry/new-york/blocks/dashboard-01/components/nav-user"
 import {
   Sidebar,
   SidebarContent,
@@ -31,7 +31,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/registry/default/ui/sidebar"
+} from "@/registry/new-york/ui/sidebar"
 
 const data = {
   user: {
