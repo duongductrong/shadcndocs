@@ -70,3 +70,17 @@ pids
 
 # TypeScript cache
 *.tsbuildinfo
+
+# Git LFS
+.git/lfs/
+
+# Add large binary files patterns
+*.psd
+*.zip
+*.iso
+*.tar
+*.gz
+*.rar
+
+public/
+registry/
