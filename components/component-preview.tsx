@@ -7,7 +7,6 @@ import { CopyButton } from "@/components/copy-button"
 import { Icons } from "@/components/icons"
 import { StyleSwitcher } from "@/components/style-switcher"
 import { ThemeWrapper } from "@/components/theme-wrapper"
-import { V0Button } from "@/components/v0-button"
 import { useConfig } from "@/hooks/use-config"
 import { cn } from "@/lib/utils"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/registry/new-york/ui/tabs"
@@ -115,7 +114,6 @@ export function ComponentPreview({
           <div className="flex items-center justify-between p-4">
             <StyleSwitcher />
             <div className="flex items-center gap-2">
-              {description ? <V0Button name={name} /> : null}
               <CopyButton
                 value={codeString}
                 variant="outline"

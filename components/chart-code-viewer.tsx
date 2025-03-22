@@ -1,24 +1,14 @@
 import * as React from "react"
 
-import { cn } from "@/lib/utils"
-import { useMediaQuery } from "@/hooks/use-media-query"
-import { useThemesConfig } from "@/hooks/use-themes-config"
 import { ChartCopyButton } from "@/components/chart-copy-button"
 import { Chart } from "@/components/chart-display"
-import { V0Button } from "@/components/v0-button"
+import { useMediaQuery } from "@/hooks/use-media-query"
+import { useThemesConfig } from "@/hooks/use-themes-config"
+import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york/ui/button"
-import {
-  Drawer,
-  DrawerContent,
-  DrawerTrigger,
-} from "@/registry/new-york/ui/drawer"
+import { Drawer, DrawerContent, DrawerTrigger } from "@/registry/new-york/ui/drawer"
 import { Sheet, SheetContent, SheetTrigger } from "@/registry/new-york/ui/sheet"
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/registry/new-york/ui/tabs"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/registry/new-york/ui/tabs"
 
 export function ChartCodeViewer({
   chart,
@@ -72,16 +62,10 @@ ${Object.entries(themesConfig?.activeTheme.cssVars.dark || {})
       >
         <div className="flex w-full items-center">
           <TabsList className="h-7 w-auto rounded-md p-0 px-[calc(theme(spacing.1)_-_2px)] py-[theme(spacing.1)]">
-            <TabsTrigger
-              value="code"
-              className="h-[1.45rem] rounded-sm px-2 text-xs"
-            >
+            <TabsTrigger value="code" className="h-[1.45rem] rounded-sm px-2 text-xs">
               Code
             </TabsTrigger>
-            <TabsTrigger
-              value="theme"
-              className="h-[1.45rem] rounded-sm px-2 text-xs"
-            >
+            <TabsTrigger value="theme" className="h-[1.45rem] rounded-sm px-2 text-xs">
               Theme
             </TabsTrigger>
           </TabsList>
@@ -91,11 +75,6 @@ ${Object.entries(themesConfig?.activeTheme.cssVars.dark || {})
                 event="copy_chart_code"
                 name={chart.name}
                 code={chart.files?.[0]?.content ?? ""}
-              />
-              <V0Button
-                id={`v0-button-${chart.name}`}
-                name={chart.name}
-                className="h-7"
               />
             </div>
           )}
