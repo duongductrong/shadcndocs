@@ -1,13 +1,13 @@
-import * as React from "react";
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
+import * as React from "react"
+import { Metadata } from "next"
+import { notFound } from "next/navigation"
 
-import { siteConfig } from "@/config/site";
+import { siteConfig } from "@/config/site"
 // import { getAllBlockIds } from "@/lib/blocks"
-import { absoluteUrl, cn } from "@/lib/utils";
-import { Style, styles } from "@/registry/registry-styles";
+import { absoluteUrl, cn } from "@/lib/utils"
+import { Style, styles } from "@/registry/registry-styles"
 
-import "@/styles/mdx.css";
+import "@/styles/mdx.css"
 // import { getRegistryComponent, getRegistryItem } from "@/lib/registry"
 
 // const getCachedRegistryItem = React.cache(
@@ -16,7 +16,7 @@ import "@/styles/mdx.css";
 //   }
 // )
 
-export const dynamicParams = false;
+export const dynamicParams = false
 
 // export async function generateMetadata({
 //   params,
@@ -79,9 +79,9 @@ export default async function BlockPage({
   params,
 }: {
   params: {
-    style: Style["name"];
-    name: string;
-  };
+    style: Style["name"]
+    name: string
+  }
 }) {
   // const { name, style } = params
   // const item = await getCachedRegistryItem(name, style)
@@ -97,5 +97,5 @@ export default async function BlockPage({
         <Component />
       </div> */}
     </>
-  );
+  )
 }

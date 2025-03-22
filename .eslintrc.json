@@ -7,5 +7,10 @@
         "project": "tsconfig.scripts.json"
       }
     }
-  ]
+  ],
+  "extends": ["next/core-web-vitals"],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  }
 }

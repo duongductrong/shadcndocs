@@ -1,11 +1,13 @@
 "use client"
 
 import * as React from "react"
-import { Index } from "@/__registry__"
+// import { Index } from "@/__registry__"
 
 import { cn } from "@/lib/utils"
 import { useConfig } from "@/hooks/use-config"
 import { Icons } from "@/components/icons"
+
+const Index = {} as any
 
 interface ThemeComponentProps extends React.HTMLAttributes<HTMLDivElement> {
   name: string
@@ -18,7 +20,7 @@ export function ThemeComponent({ name, ...props }: ThemeComponentProps) {
   const [config] = useConfig()
 
   const Preview = React.useMemo(() => {
-    const Component = Index[config.style][name]?.component
+    const Component = Index?.[config.style]?.[name]?.component
 
     if (!Component) {
       return (
