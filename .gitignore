@@ -83,4 +83,4 @@ pids
 *.rar
 
 public/
-registry/
+# registry/
