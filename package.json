@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev -p 3333",
-    "build": "pnpm --filter=shadcn build && contentlayer2 build && pnpm build:registry && next build",
+    "build": "next build",
     "build:registry": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/build-registry.mts && prettier --loglevel silent --write \"registry/**/*.{ts,tsx,mdx}\" --cache",
     "registry:build": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/build-registry.mts && prettier --loglevel silent --write \"registry/**/*.{ts,tsx,mdx}\" --cache",
     "registry:capture": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/capture-registry.mts",
@@ -93,7 +93,6 @@
     "swr": "2.2.6-beta.3",
     "tailwind-merge": "^1.12.0",
     "tailwindcss-animate": "^1.0.7",
-    "ts-morph": "^22.0.0",
     "vaul": "1.1.1",
     "zod": "^3.21.4"
   },

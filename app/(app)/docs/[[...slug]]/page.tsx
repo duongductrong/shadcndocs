@@ -32,9 +32,7 @@ async function getDocFromParams({ params }: DocPageProps) {
   return doc
 }
 
-export async function generateMetadata({
-  params,
-}: DocPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: DocPageProps): Promise<Metadata> {
   const doc = await getDocFromParams({ params })
 
   if (!doc) {
@@ -51,9 +49,9 @@ export async function generateMetadata({
       url: absoluteUrl(doc.slug),
       images: [
         {
-          url: `/og?title=${encodeURIComponent(
-            doc.title
-          )}&description=${encodeURIComponent(doc.description)}`,
+          url: `/og?title=${encodeURIComponent(doc.title)}&description=${encodeURIComponent(
+            doc.description
+          )}`,
         },
       ],
     },
@@ -63,9 +61,9 @@ export async function generateMetadata({
       description: doc.description,
       images: [
         {
-          url: `/og?title=${encodeURIComponent(
-            doc.title
-          )}&description=${encodeURIComponent(doc.description)}`,
+          url: `/og?title=${encodeURIComponent(doc.title)}&description=${encodeURIComponent(
+            doc.description
+          )}`,
         },
       ],
       creator: "@shadcn",
@@ -73,9 +71,7 @@ export async function generateMetadata({
   }
 }
 
-export async function generateStaticParams(): Promise<
-  DocPageProps["params"][]
-> {
+export async function generateStaticParams(): Promise<DocPageProps["params"][]> {
   return allDocs.map((doc) => ({
     slug: doc.slugAsParams.split("/"),
   }))
@@ -101,9 +97,7 @@ export default async function DocPage({ params }: DocPageProps) {
           <div className="text-foreground">{doc.title}</div>
         </div>
         <div className="space-y-2">
-          <h1 className={cn("scroll-m-20 text-3xl font-bold tracking-tight")}>
-            {doc.title}
-          </h1>
+          <h1 className={cn("scroll-m-20 text-3xl font-bold tracking-tight")}>{doc.title}</h1>
           {doc.description && (
             <p className="text-base text-muted-foreground">
               <Balancer>{doc.description}</Balancer>

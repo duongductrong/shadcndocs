@@ -4,8 +4,10 @@ import { UnistNode, UnistTree } from "types/unist"
 import { u } from "unist-builder"
 import { visit } from "unist-util-visit"
 
-import { Index } from "../__registry__"
+// import { Index } from "../__registry__"
 import { styles } from "../registry/registry-styles"
+
+const Index = {} as any
 
 export function rehypeComponent() {
   return async (tree: UnistTree) => {
@@ -20,9 +22,7 @@ export function rehypeComponent() {
 
       if (node.name === "ComponentSource") {
         const name = getNodeAttributeByName(node, "name")?.value as string
-        const fileName = getNodeAttributeByName(node, "fileName")?.value as
-          | string
-          | undefined
+        const fileName = getNodeAttributeByName(node, "fileName")?.value as string | undefined
 
         if (!name && !srcPath) {
           return null
@@ -39,10 +39,7 @@ export function rehypeComponent() {
               src = fileName
                 ? component.files.find((file: unknown) => {
                     if (typeof file === "string") {
-                      return (
-                        file.endsWith(`${fileName}.tsx`) ||
-                        file.endsWith(`${fileName}.ts`)
-                      )
+                      return file.endsWith(`${fileName}.tsx`) || file.endsWith(`${fileName}.ts`)
                     }
                     return false
                   }) || component.files[0]?.path
@@ -56,10 +53,7 @@ export function rehypeComponent() {
             // Replace imports.
             // TODO: Use @swc/core and a visitor to replace this.
             // For now a simple regex should do.
-            source = source.replaceAll(
-              `@/registry/${style.name}/`,
-              "@/components/"
-            )
+            source = source.replaceAll(`@/registry/${style.name}/`, "@/components/")
             source = source.replaceAll("export default", "export")
 
             // Add code as children so that rehype can take over at build time.
@@ -118,10 +112,7 @@ export function rehypeComponent() {
             // Replace imports.
             // TODO: Use @swc/core and a visitor to replace this.
             // For now a simple regex should do.
-            source = source.replaceAll(
-              `@/registry/${style.name}/`,
-              "@/components/"
-            )
+            source = source.replaceAll(`@/registry/${style.name}/`, "@/components/")
             source = source.replaceAll("export default", "export")
 
             // Add code as children so that rehype can take over at build time.

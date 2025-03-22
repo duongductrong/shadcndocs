@@ -1,31 +1,26 @@
-"use client";
+"use client"
 
-import Image from "next/image";
-import * as React from "react";
+import Image from "next/image"
+import * as React from "react"
 
-import { CopyButton } from "@/components/copy-button";
-import { Icons } from "@/components/icons";
-import { StyleSwitcher } from "@/components/style-switcher";
-import { ThemeWrapper } from "@/components/theme-wrapper";
-import { V0Button } from "@/components/v0-button";
-import { useConfig } from "@/hooks/use-config";
-import { cn } from "@/lib/utils";
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/registry/new-york/ui/tabs";
-import { styles } from "@/registry/registry-styles";
+import { CopyButton } from "@/components/copy-button"
+import { Icons } from "@/components/icons"
+import { StyleSwitcher } from "@/components/style-switcher"
+import { ThemeWrapper } from "@/components/theme-wrapper"
+import { V0Button } from "@/components/v0-button"
+import { useConfig } from "@/hooks/use-config"
+import { cn } from "@/lib/utils"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/registry/new-york/ui/tabs"
+import { styles } from "@/registry/registry-styles"
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
-  name: string;
-  extractClassname?: boolean;
-  extractedClassNames?: string;
-  align?: "center" | "start" | "end";
-  description?: string;
-  hideCode?: boolean;
-  type?: "block" | "component" | "example";
+  name: string
+  extractClassname?: boolean
+  extractedClassNames?: string
+  align?: "center" | "start" | "end"
+  description?: string
+  hideCode?: boolean
+  type?: "block" | "component" | "example"
 }
 
 export function ComponentPreview({
@@ -40,14 +35,14 @@ export function ComponentPreview({
   hideCode = false,
   ...props
 }: ComponentPreviewProps) {
-  const [config] = useConfig();
-  const index = styles.findIndex((style) => style.name === config.style);
+  const [config] = useConfig()
+  const index = styles.findIndex((style) => style.name === config.style)
 
-  const Codes = React.Children.toArray(children) as React.ReactElement[];
-  const Code = Codes[index];
+  const Codes = React.Children.toArray(children) as React.ReactElement[]
+  const Code = Codes[index]
 
   const Preview = React.useMemo(() => {
-    const Component = () => <div>Hello</div>;
+    const Component = () => <div>Hello</div>
 
     if (!Component) {
       return (
@@ -58,22 +53,18 @@ export function ComponentPreview({
           </code>{" "}
           not found in registry.
         </p>
-      );
+      )
     }
 
-    return <Component />;
-  }, [name, config.style]);
+    return <Component />
+  }, [name, config.style])
 
   const codeString = React.useMemo(() => {
-    if (
-      typeof Code?.props["data-rehype-pretty-code-fragment"] !== "undefined"
-    ) {
-      const [Button] = React.Children.toArray(
-        Code.props.children
-      ) as React.ReactElement[];
-      return Button?.props?.value || Button?.props?.__rawString__ || null;
+    if (typeof Code?.props["data-rehype-pretty-code-fragment"] !== "undefined") {
+      const [Button] = React.Children.toArray(Code.props.children) as React.ReactElement[]
+      return Button?.props?.value || Button?.props?.__rawString__ || null
     }
-  }, [Code]);
+  }, [Code])
 
   if (type === "block") {
     return (
@@ -93,20 +84,14 @@ export function ComponentPreview({
           className="absolute left-0 top-0 z-20 hidden w-[970px] max-w-none bg-background dark:block sm:w-[1280px] md:hidden md:dark:hidden"
         />
         <div className="absolute inset-0 hidden w-[1600px] bg-background md:block">
-          <iframe
-            src={`/view/styles/${config.style}/${name}`}
-            className="size-full"
-          />
+          <iframe src={`/view/styles/${config.style}/${name}`} className="size-full" title={name} />
         </div>
       </div>
-    );
+    )
   }
 
   return (
-    <div
-      className={cn("group relative my-4 flex flex-col space-y-2", className)}
-      {...props}
-    >
+    <div className={cn("group relative my-4 flex flex-col space-y-2", className)} {...props}>
       <Tabs defaultValue="preview" className="relative mr-auto w-full">
         <div className="flex items-center justify-between pb-3">
           {!hideCode && (
@@ -140,14 +125,11 @@ export function ComponentPreview({
           </div>
           <ThemeWrapper defaultTheme="zinc">
             <div
-              className={cn(
-                "preview flex min-h-[350px] w-full justify-center p-10",
-                {
-                  "items-center": align === "center",
-                  "items-start": align === "start",
-                  "items-end": align === "end",
-                }
-              )}
+              className={cn("preview flex min-h-[350px] w-full justify-center p-10", {
+                "items-center": align === "center",
+                "items-start": align === "start",
+                "items-end": align === "end",
+              })}
             >
               <React.Suspense
                 fallback={
@@ -171,5 +153,5 @@ export function ComponentPreview({
         </TabsContent>
       </Tabs>
     </div>
-  );
+  )
 }
