@@ -32,6 +32,7 @@ The repository includes specialized components for documentation:
 ## UI Components
 
 Includes documentation for various UI components:
+
 - Buttons
 - Inputs
 - Alerts
@@ -71,17 +72,29 @@ Example of using a component in MDX:
 - Follow consistent styling patterns
 - Provide comprehensive examples
 
-## License
-
-[Add license information]
-
 ## Contributing
 
-[Add contribution guidelines]
+We welcome contributions to improve the documentation! Here's how you can help:
+
+1. Fork the repository and create your branch from `master`
+2. Make your changes following our code style and documentation guidelines
+3. Test your changes locally to ensure they render correctly
+4. Submit a pull request with a clear description of your changes
+5. Wait for review and address any feedback
+
+Please ensure your contributions:
+- Follow the existing documentation structure and style
+- Include clear, concise explanations
+- Maintain accessibility standards
+- Add examples where appropriate
+- Update relevant navigation/config files if adding new pages
+
+For major changes, please open an issue first to discuss what you would like to change.
 
 ---
 
 This documentation site is built with:
+
 - Next.js
 - MDX
 - shadcn/ui
