@@ -1,9 +1,8 @@
 import { Metadata } from "next"
-import Image from "next/image"
 import Link from "next/link"
 
 import { Announcement } from "@/components/announcement"
-import { CardsDemo } from "@/components/cards"
+import { CardsDemo } from "@/components/card-demo"
 import { ExamplesNav } from "@/components/examples-nav"
 import {
   PageActions,

@@ -1,4 +1,4 @@
-# shadcn-docs
+# shadcn/docs
 
 A comprehensive documentation site built with MDX and shadcn/ui components.
 
@@ -83,6 +83,7 @@ We welcome contributions to improve the documentation! Here's how you can help:
 5. Wait for review and address any feedback
 
 Please ensure your contributions:
+
 - Follow the existing documentation structure and style
 - Include clear, concise explanations
 - Maintain accessibility standards
