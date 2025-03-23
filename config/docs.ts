@@ -32,6 +32,11 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "MDX",
+          href: "/docs/mdx",
+          items: [],
+        },
+        {
           title: "components.json",
           href: "/docs/components-json",
           items: [],
