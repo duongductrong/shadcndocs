@@ -13,13 +13,14 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/registry/new-york/ui
 import { styles } from "@/registry/registry-styles"
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
-  name: string
+  name?: string
   extractClassname?: boolean
   extractedClassNames?: string
   align?: "center" | "start" | "end"
   description?: string
   hideCode?: boolean
   type?: "block" | "component" | "example"
+  component?: React.ComponentType<any>
 }
 
 export function ComponentPreview({
@@ -32,8 +33,11 @@ export function ComponentPreview({
   align = "center",
   description,
   hideCode = false,
+  component,
   ...props
 }: ComponentPreviewProps) {
+  if (!name && !component) throw new Error("Either name or component must be provided")
+
   const [config] = useConfig()
   const index = styles.findIndex((style) => style.name === config.style)
 
@@ -41,7 +45,7 @@ export function ComponentPreview({
   const Code = Codes[index]
 
   const Preview = React.useMemo(() => {
-    const Component = () => <div>Hello</div>
+    const Component = component || React.lazy(() => import(name!))
 
     if (!Component) {
       return (
@@ -70,14 +74,14 @@ export function ComponentPreview({
       <div className="relative aspect-[4/2.5] w-full overflow-hidden rounded-md border">
         <Image
           src={`/r/styles/${config.style}/${name}-light.png`}
-          alt={name}
+          alt={name!}
           width={1440}
           height={900}
           className="absolute left-0 top-0 z-20 w-[970px] max-w-none bg-background dark:hidden sm:w-[1280px] md:hidden md:dark:hidden"
         />
         <Image
           src={`/r/styles/${config.style}/${name}-dark.png`}
-          alt={name}
+          alt={name!}
           width={1440}
           height={900}
           className="absolute left-0 top-0 z-20 hidden w-[970px] max-w-none bg-background dark:block sm:w-[1280px] md:hidden md:dark:hidden"

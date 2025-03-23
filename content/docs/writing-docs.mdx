@@ -80,7 +80,13 @@ import { Alert } from "@/components/ui/alert"
 
 shadcn/ui provides several components specifically designed for documentation:
 
-<ComponentPreview name="button-demo" />
+<ComponentPreview
+  component={() => (
+    <div className="p-4 text-sm rounded-md text-center">
+      You can pass a component to the component preview <br /> by using the `component` prop.
+    </div>
+  )}
+/>
 
 ## Documentation Components
 
