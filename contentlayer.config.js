@@ -1,9 +1,5 @@
 import { getHighlighter } from "@shikijs/compat"
-import {
-  defineDocumentType,
-  defineNestedType,
-  makeSource,
-} from "contentlayer2/source-files"
+import { defineDocumentType, defineNestedType, makeSource } from "contentlayer2/source-files"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import rehypePrettyCode from "rehype-pretty-code"
 import rehypeSlug from "rehype-slug"
@@ -36,6 +32,28 @@ const LinksProperties = defineNestedType(() => ({
       type: "string",
     },
   },
+}))
+
+export const Blog = defineDocumentType(() => ({
+  name: "Blog",
+  filePathPattern: `blogs/**/*.mdx`,
+  contentType: "mdx",
+  fields: {
+    title: {
+      type: "string",
+      required: true,
+    },
+    description: {
+      type: "string",
+      required: true,
+    },
+    toc: {
+      type: "boolean",
+      default: true,
+      required: false,
+    },
+  },
+  computedFields,
 }))
 
 export const Doc = defineDocumentType(() => ({
@@ -80,7 +98,7 @@ export const Doc = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: "./content",
-  documentTypes: [Doc],
+  documentTypes: [Doc, Blog],
   mdx: {
     remarkPlugins: [remarkGfm, codeImport],
     rehypePlugins: [
@@ -142,8 +160,7 @@ export default makeSource({
               return
             }
 
-            preElement.properties["__withMeta__"] =
-              node.children.at(0).tagName === "div"
+            preElement.properties["__withMeta__"] = node.children.at(0).tagName === "div"
             preElement.properties["__rawString__"] = node.__rawString__
 
             if (node.__src__) {

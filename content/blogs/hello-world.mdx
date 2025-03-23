@@ -1,0 +1,116 @@
+---
+title: "Hello world"
+description: "Hello world, this is a test blog post"
+published: true
+---
+
+<Callout className="mt-4">
+  ⚠️ This is just a demonstration site to showcase the capabilities of Next.js, MDX, and shadcn/ui
+  components. The articles and content are placeholder examples.
+</Callout>
+
+## Featured Content
+
+<div className="grid gap-6 mt-6">
+  <Card>
+    <CardHeader>
+      <CardTitle>Web Development Best Practices</CardTitle>
+      <CardDescription>Modern approaches to building scalable web applications</CardDescription>
+    </CardHeader>
+    <CardContent>
+      Learn about the latest techniques in web development, from performance optimization to code architecture...
+    </CardContent>
+    <CardFooter>
+      <Button variant="link">Read More →</Button>
+    </CardFooter>
+  </Card>
+
+  <Card>
+    <CardHeader>
+      <CardTitle>Design Patterns in Practice</CardTitle>
+      <CardDescription>Real-world applications of software design patterns</CardDescription>
+    </CardHeader>
+    <CardContent>
+      Explore practical implementations of design patterns and how they improve code quality...
+    </CardContent>
+    <CardFooter>
+      <Button variant="link">Read More →</Button>
+    </CardFooter>
+  </Card>
+</div>
+
+## Topics We Cover
+
+<div className="flex flex-wrap gap-2 mt-4">
+  <Badge variant="secondary">Web Development</Badge>
+  <Badge variant="secondary">Design Patterns</Badge>
+  <Badge variant="secondary">Software Engineering</Badge>
+  <Badge variant="secondary">Best Practices</Badge>
+  <Badge variant="secondary">Performance</Badge>
+  <Badge variant="secondary">Architecture</Badge>
+</div>
+
+## Latest Articles
+
+<div className="grid gap-6 mt-6">
+  <Card>
+    <CardHeader>
+      <CardTitle>Engineering Excellence</CardTitle>
+      <CardDescription>
+        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <span>March 2024</span>
+          <span>•</span>
+          <span>5 min read</span>
+        </div>
+      </CardDescription>
+    </CardHeader>
+    <CardContent>
+      Exploring the principles and practices that lead to engineering excellence...
+    </CardContent>
+    <CardFooter>
+      <Button variant="ghost">Read Article →</Button>
+    </CardFooter>
+  </Card>
+
+  <Card>
+    <CardHeader>
+      <CardTitle>Modern Web Architecture</CardTitle>
+      <CardDescription>
+        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <span>March 2024</span>
+          <span>•</span>
+          <span>8 min read</span>
+        </div>
+      </CardDescription>
+    </CardHeader>
+    <CardContent>
+      Understanding the building blocks of modern web applications...
+    </CardContent>
+    <CardFooter>
+      <Button variant="ghost">Read Article →</Button>
+    </CardFooter>
+  </Card>
+</div>
+
+## Stay Updated
+
+<Alert className="mt-6">
+  <AlertTitle>Never Miss an Article</AlertTitle>
+  <AlertDescription>
+    Follow our social channels to stay updated with the latest articles and discussions.
+  </AlertDescription>
+</Alert>
+
+<div className="flex gap-4 mt-4">
+  <Button asChild>
+    <Link href="https://github.com/duongductrong/shadcn-docs">GitHub</Link>
+  </Button>
+  <Button variant="outline" asChild>
+    <Link href="/rss.xml">RSS Feed</Link>
+  </Button>
+</div>
+
+<Callout className="mt-8">
+  Have a topic you'd like us to cover? Feel free to open an issue on our GitHub repository with your
+  suggestion!
+</Callout>

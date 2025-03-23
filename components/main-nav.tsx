@@ -1,13 +1,12 @@
-"use client";
+"use client"
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import Link from "next/link"
 
-import { Icons } from "@/components/icons";
-import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
+import { Icons } from "@/components/icons"
+import { siteConfig } from "@/config/site"
+import { cn } from "@/lib/utils"
 
-import { docsConfig } from "@/config/docs";
+import { docsConfig } from "@/config/docs"
 
 const navItems = [
   {
@@ -19,8 +18,7 @@ const navItems = [
     title: "Components",
     href: "/docs/components",
     isActive: (pathname: string) =>
-      pathname?.startsWith("/docs/components") &&
-      !pathname?.startsWith("/docs/component/chart"),
+      pathname?.startsWith("/docs/components") && !pathname?.startsWith("/docs/component/chart"),
   },
   {
     title: "Blocks",
@@ -31,8 +29,7 @@ const navItems = [
     title: "Charts",
     href: "/charts",
     isActive: (pathname: string) =>
-      pathname?.startsWith("/docs/component/chart") ||
-      pathname?.startsWith("/charts"),
+      pathname?.startsWith("/docs/component/chart") || pathname?.startsWith("/charts"),
   },
   {
     title: "Themes",
@@ -44,18 +41,14 @@ const navItems = [
     href: "/colors",
     isActive: (pathname: string) => pathname?.startsWith("/colors"),
   },
-];
+]
 
 export function MainNav() {
-  const pathname = usePathname();
-
   return (
     <div className="mr-4 hidden md:flex">
       <Link href="/" className="mr-4 flex items-center gap-2 lg:mr-6">
         <Icons.logo className="h-6 w-6" />
-        <span className="hidden font-bold lg:inline-block">
-          {siteConfig.name}
-        </span>
+        <span className="hidden font-bold lg:inline-block">{siteConfig.name}</span>
       </Link>
       <nav className="flex items-center gap-4 text-sm xl:gap-6">
         {docsConfig.mainNav.map((item) => (
@@ -74,5 +67,5 @@ export function MainNav() {
         ))}
       </nav>
     </div>
-  );
+  )
 }
