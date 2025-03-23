@@ -21,7 +21,7 @@ export function SiteFooter() {
             <span>
               Customized by{" "}
               <a
-                href={siteConfig.links.twitter}
+                href={siteConfig.links.github}
                 target="_blank"
                 rel="noreferrer"
                 className="font-medium underline underline-offset-4"
