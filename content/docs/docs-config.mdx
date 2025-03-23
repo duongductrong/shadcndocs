@@ -3,10 +3,62 @@ title: "config/docs.ts"
 description: "The docs config file is used to configure the docs site."
 ---
 
-# config/docs.ts
+## config/docs.ts
 
 The `docs.ts` file is used to configure the docs site. It is used to define the sidebar navigation, main navigation, and other settings.
 
-## Main Nav
+Let's change config in `config/docs.ts` to change the main navigation.
 
-The `mainNav` array is used to define the main navigation items.
+### mainNav
+
+You can add or remove items in the `mainNav` array. This will change the main navigation in the header.
+
+```ts
+docsConfig: DocsConfig = {
+  // ...
+  mainNav: [
+    {
+      title: "Docs",
+      href: "/docs",
+    },
+    {
+      title: "Blog",
+      href: "/blog",
+    },
+  ],
+  // ...
+}
+```
+
+### sidebarNav
+
+You can add or remove items in the `sidebarNav` array. This will change the sidebar navigation in the sidebar.
+
+```ts
+export const docsConfig: DocsConfig = {
+  // ...
+  sidebarNav: [
+    {
+      title: "Getting Started",
+      items: [
+        {
+          title: "Introduction",
+          href: "/docs",
+          items: [],
+        },
+        {
+          title: "MDX",
+          href: "/docs/mdx",
+          items: [],
+        },
+        {
+          title: "Changelog",
+          href: "/docs/changelog",
+          items: [],
+        },
+      ],
+    },
+  ],
+  // ...
+}
+```

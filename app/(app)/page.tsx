@@ -13,9 +13,9 @@ import {
 } from "@/components/page-header"
 import { Button } from "@/registry/new-york/ui/button"
 
-const title = "Build your component library"
+const title = "Build your own documentation site"
 const description =
-  "A set of beautifully-designed, accessible components and a code distribution platform. Works with your favorite frameworks. Open Source. Open Code."
+  "A modern documentation starter template with built-in search, dark mode and more. Built with Next.js, MDX, Tailwind CSS and shadcn/ui components."
 
 export const metadata: Metadata = {
   title,
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: `/og?title=${encodeURIComponent(
-          title
-        )}&description=${encodeURIComponent(description)}`,
+        url: `/og?title=${encodeURIComponent(title)}&description=${encodeURIComponent(
+          description
+        )}`,
       },
     ],
   },
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     images: [
       {
-        url: `/og?title=${encodeURIComponent(
-          title
-        )}&description=${encodeURIComponent(description)}`,
+        url: `/og?title=${encodeURIComponent(title)}&description=${encodeURIComponent(
+          description
+        )}`,
       },
     ],
   },
@@ -66,22 +66,6 @@ export default function IndexPage() {
       </div>
       <div className="container-wrapper">
         <div className="container py-6">
-          <section className="overflow-hidden rounded-lg border bg-background shadow-md md:hidden md:shadow-xl">
-            <Image
-              src="/examples/cards-light.png"
-              width={1280}
-              height={1214}
-              alt="Cards"
-              className="block dark:hidden"
-            />
-            <Image
-              src="/examples/cards-dark.png"
-              width={1280}
-              height={1214}
-              alt="Cards"
-              className="hidden dark:block"
-            />
-          </section>
           <section
             className="hidden md:block [&>div]:p-0"
             style={
