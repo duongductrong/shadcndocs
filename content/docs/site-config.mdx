@@ -1,17 +1,7 @@
 ---
 title: "config/site.ts"
-description: "The site config file is used to configure the site."
+description: The `site.ts` file is used to configure the site. It contains configuration for the site name, description, URLs, and theme colors.
 ---
-
-# config/site.ts
-
-The `site.ts` file is used to configure the site. It contains configuration for the site name, description, URLs, and theme colors.
-
-# Site Configuration
-
-The site configuration system provides a centralized way to manage your documentation site's settings and metadata.
-
-## Configuration File
 
 The site configuration is managed in `config/site.ts`. This file exports the main configuration object and related types.
 
@@ -54,6 +44,7 @@ export const META_THEME_COLORS = {
 ```
 
 These colors are used for:
+
 - Browser theme colors
 - Meta theme tags
 - System appearance integration
@@ -100,6 +91,7 @@ To customize the site configuration:
 ## Related Files
 
 The site configuration typically works in conjunction with:
+
 - `next.config.js` for Next.js configuration
 - `tailwind.config.js` for styling configuration
 - Meta components for SEO and social sharing

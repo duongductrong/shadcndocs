@@ -1,0 +1,247 @@
+---
+title: Writing Docs
+description: Learn how to create beautiful, interactive documentation using MDX and shadcn/ui components.
+---
+
+MDX is a powerful format that lets you seamlessly write JSX in your Markdown documents. When combined with shadcn/ui, it provides a robust system for creating beautiful, interactive documentation.
+
+## Getting Started
+
+### File Structure
+
+Organize your documentation with a clear structure:
+
+```bash
+docs/
+├── content/
+│   ├── docs/
+│   │   ├── getting-started.mdx
+│   │   ├── components/
+│   │   │   ├── button.mdx
+│   │   │   └── input.mdx
+│   │   └── guides/
+│   │       └── installation.mdx
+│   └── blog/
+│       └── posts/
+└── public/
+    └── images/
+```
+
+### Creating Your First MDX File
+
+1. Create a new `.mdx` file in your docs directory
+2. Add front matter at the top of the file
+3. Write your content using Markdown and components
+
+```mdx
+---
+title: Getting Started
+description: Learn how to get started with our library
+---
+
+# Getting Started
+
+Welcome to our documentation...
+```
+
+### Front Matter Configuration
+
+The front matter provides metadata for your documentation pages:
+
+```yaml
+---
+title: Page Title
+description: Page description for SEO
+---
+```
+
+Additional front matter options:
+
+- `toc`: Enable/disable table of contents
+- `section`: Group pages into sections
+- `status`: Mark pages as draft/published
+
+## Using shadcn/ui Components
+
+### Component Integration
+
+Import and use shadcn/ui components directly in your MDX:
+
+```mdx
+import { Button } from "@/components/ui/button"
+import { Alert } from "@/components/ui/alert"
+
+<Button>Click me</Button>
+
+<Alert>Important information here</Alert>
+```
+
+### Available Components
+
+shadcn/ui provides several components specifically designed for documentation:
+
+<ComponentPreview name="button-demo" />
+
+## Documentation Components
+
+### ComponentPreview
+
+Use `ComponentPreview` to showcase live examples:
+
+```mdx
+<ComponentPreview name="button-demo" description="Interactive button examples" />
+```
+
+### Code Blocks
+
+Display code with syntax highlighting:
+
+```tsx showLineNumbers title="Example Component"
+export function Example() {
+  return (
+    <div className="rounded-md border p-4">
+      <h2>Example Component</h2>
+      <p>This is an example component.</p>
+    </div>
+  )
+}
+```
+
+### Steps
+
+Create step-by-step guides:
+
+<Steps>
+  <Step>First, install the dependencies</Step>
+  <Step>Then, import the components</Step>
+  <Step>Finally, use them in your MDX</Step>
+</Steps>
+
+### Callouts
+
+Highlight important information:
+
+<br />
+
+<Callout>This is an important note about using components in MDX.</Callout>
+
+<br />
+
+<Callout type="warning">Be careful when modifying these settings.</Callout>
+
+## Best Practices
+
+### Document Organization
+
+1. **Consistent Structure**
+
+   - Use clear headings and sections
+   - Maintain consistent spacing
+   - Group related content together
+
+2. **Component Usage**
+
+   - Import components at the top of the file
+   - Use semantic component names
+   - Provide props documentation
+
+3. **Accessibility**
+
+   - Use proper heading hierarchy
+   - Add alt text to images
+   - Ensure proper color contrast
+   - Test keyboard navigation
+
+4. **Writing Style**
+   - Keep sentences clear and concise
+   - Use active voice
+   - Provide examples for complex concepts
+   - Include error handling scenarios
+
+### Performance Optimization
+
+- Optimize images before importing
+- Lazy load heavy components
+- Use code splitting where appropriate
+- Minimize external dependencies
+
+## Advanced Usage
+
+### Custom Components
+
+Create custom components for specific documentation needs:
+
+```tsx
+export function FeatureComparison({ features }) {
+  return (
+    <Table>
+      <TableHeader>
+        <TableRow>
+          <TableHead>Feature</TableHead>
+          <TableHead>Description</TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {features.map((feature) => (
+          <TableRow key={feature.name}>
+            <TableCell>{feature.name}</TableCell>
+            <TableCell>{feature.description}</TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
+    </Table>
+  )
+}
+```
+
+### Meta Data and SEO
+
+Optimize your documentation for search engines:
+
+```mdx
+---
+title: Advanced Features
+description: Learn about advanced features and capabilities
+keywords: [advanced, features, documentation]
+openGraph:
+  title: Advanced Features
+  description: Comprehensive guide to advanced features
+  image: /images/advanced-features.png
+---
+```
+
+## Troubleshooting
+
+### Common Issues
+
+1. **Components Not Rendering**
+
+   - Check import paths
+   - Verify component names
+   - Ensure proper MDX configuration
+
+2. **Styling Issues**
+
+   - Check Tailwind classes
+   - Verify theme configuration
+   - Inspect component hierarchy
+
+3. **Build Errors**
+   - Update dependencies
+   - Clear cache and rebuild
+   - Check console for errors
+
+### Getting Help
+
+- Check the [GitHub repository](https://github.com/duongductrong/shadcn-docs) for issues
+- Join the community discussions
+- Review the documentation source code
+
+## Resources
+
+- [MDX Documentation](https://mdxjs.com/)
+- [shadcn/ui Components](https://ui.shadcn.com/)
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS](https://tailwindcss.com/)
+
+Remember to keep your documentation up to date and responsive to user feedback. Good documentation is a living document that grows and improves with your project.

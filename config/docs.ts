@@ -44,16 +44,20 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
-      title: "Configuration",
-      label: "Core",
+      title: "Guides",
       items: [
         {
-          title: "docs.ts",
+          title: "Writing Docs",
+          href: "/docs/writing-docs",
+          items: [],
+        },
+        {
+          title: "Mavigation",
           href: "/docs/docs-config",
           items: [],
         },
         {
-          title: "site.ts",
+          title: "Metadata",
           href: "/docs/site-config",
           items: [],
         },
