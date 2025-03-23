@@ -1,21 +1,21 @@
 ---
 title: Introduction
-description: shadcn/ui is a set of beautifully-designed, accessible components and a code distribution platform. Works with your favorite frameworks and AI models. Open Source. Open Code.
+description: Base on shadcn/ui, shadcn-docs is a documentation template for building beautiful documentation sites with Next.js and MDX.
 ---
 
-**This is not a component library. It is how you build your component library.**
+## Features
 
-You know how most traditional component libraries work: you install a package from NPM, import the components, and use them in your app.
+This is what shadcn/docs (from shadcn/ui) aims to solve. It is built around the following principles:
 
-This approach works well until you need to customize a component to fit your design system or require one that isn’t included in the library. **Often, you end up wrapping library components, writing workarounds to override styles, or mixing components from different libraries with incompatible APIs.**
-
-This is what shadcn/ui aims to solve. It is built around the following principles:
-
+- **Open Source:** The code is open source and you can use it as a starting point for your own documentation site.
 - **Open Code:** The top layer of your component code is open for modification.
 - **Composition:** Every component uses a common, composable interface, making them predictable.
 - **Distribution:** A flat-file schema and command-line tool make it easy to distribute components.
 - **Beautiful Defaults:** Carefully chosen default styles, so you get great design out-of-the-box.
+- **Customizable:** All code is customizable, you can change the code to fit your needs.
 - **AI-Ready:** Open code for LLMs to read, understand, and improve.
+
+This approach works well until you need to customize a component to fit your design system or require one that isn’t included in the library. **Often, you end up wrapping library components, writing workarounds to override styles, or mixing components from different libraries with incompatible APIs.**
 
 ## Open Code
 
@@ -29,19 +29,15 @@ _In a typical library, if you need to change a button’s behavior, you have to 
 
 <Accordion collapsible>
   <AccordionItem value="faq-1" className="border-none">
-    <AccordionTrigger>
-      How do I pull upstream updates in an Open Code approach?
-    </AccordionTrigger>
+    <AccordionTrigger>How do I pull upstream updates in an Open Code approach?</AccordionTrigger>
     <AccordionContent>
       <p>
-        shadcn/ui follows a headless component architecture. This means the core
-        of your app can receive fixes by updating your dependencies, for
-        instance, radix-ui or input-otp.
+        shadcn/ui follows a headless component architecture. This means the core of your app can
+        receive fixes by updating your dependencies, for instance, radix-ui or input-otp.
       </p>
       <p className="mt-4">
-        The topmost layer, i.e., the one closest to your design system, is not
-        coupled with the implementation of the library. It stays open for
-        modification.
+        The topmost layer, i.e., the one closest to your design system, is not coupled with the
+        implementation of the library. It stays open for modification.
       </p>
     </AccordionContent>
   </AccordionItem>
@@ -69,6 +65,11 @@ shadcn/ui comes with a large collection of components that have carefully chosen
 - **Good Out-of-the-Box:** Your UI has a clean and minimal look without extra work.
 - **Unified Design:** Components naturally fit with one another. Each component is built to match the others, keeping your UI consistent.
 - **Easily Customizable:** If you want to change something, it's simple to override and extend the defaults.
+
+## Customizable
+
+The shadcn/docs is designed to be easily customizable. You can change the code to fit your needs.
+Everything is opening
 
 ## AI-Ready
 

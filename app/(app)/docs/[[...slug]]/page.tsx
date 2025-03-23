@@ -1,18 +1,17 @@
-import { notFound } from "next/navigation"
 import { allDocs } from "contentlayer/generated"
+import { notFound } from "next/navigation"
 
 import "@/styles/mdx.css"
+import { ChevronRight, ExternalLink } from "lucide-react"
 import type { Metadata } from "next"
 import Link from "next/link"
-import { ChevronRight, ExternalLink } from "lucide-react"
 import Balancer from "react-wrap-balancer"
 
-import { getTableOfContents } from "@/lib/toc"
-import { absoluteUrl, cn } from "@/lib/utils"
 import { Mdx } from "@/components/mdx-components"
-import { OpenInV0Cta } from "@/components/open-in-v0-cta"
 import { DocsPager } from "@/components/pager"
 import { DashboardTableOfContents } from "@/components/toc"
+import { getTableOfContents } from "@/lib/toc"
+import { absoluteUrl, cn } from "@/lib/utils"
 import { badgeVariants } from "@/registry/new-york/ui/badge"
 
 interface DocPageProps {
@@ -139,7 +138,6 @@ export default async function DocPage({ params }: DocPageProps) {
         <div className="sticky top-20 -mt-6 h-[calc(100vh-3.5rem)] pt-4">
           <div className="no-scrollbar h-full overflow-auto pb-10">
             {doc.toc && <DashboardTableOfContents toc={toc} />}
-            <OpenInV0Cta className="mt-6 max-w-[80%]" />
           </div>
         </div>
       </div>

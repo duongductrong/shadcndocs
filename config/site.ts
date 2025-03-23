@@ -1,12 +1,12 @@
 export const siteConfig = {
-  name: "shadcn/ui",
-  url: "https://ui.shadcn.com",
-  ogImage: "https://ui.shadcn.com/og.jpg",
+  name: "shadcn/docs",
+  url: "https://docs.shadcn.com",
+  ogImage: "https://docs.shadcn.com/og.jpg",
   description:
-    "A set of beautifully-designed, accessible components and a code distribution platform. Works with your favorite frameworks. Open Source. Open Code.",
+    "A documentation template for building beautiful documentation sites with Next.js and MDX. Open Source. Open Code.",
   links: {
     twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn-ui/ui",
+    github: "https://github.com/duongductrong/shadcn-docs",
   },
 }
 
