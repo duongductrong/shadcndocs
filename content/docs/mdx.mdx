@@ -37,221 +37,144 @@ shadcn/ui provides a wide range of components that you can use directly in your 
 - `Steps` - Creates step-by-step guides
 - `Callout` - Highlights important information
 - `CodeTabs` - Organizes code examples in tabs
-- `TabsList` and `TabsTrigger` - Creates tabbed interfaces
-- `DataTable` - Advanced table with sorting and filtering
+- `TabsList` and `TabsTrigger` and `TabsContent` - Creates tabbed interfaces
+- `Codeblock` - Displays code blocks
 
-## Using Components
+#### ComponentPreview
 
-To use components in your MDX files:
-
-1. Import the components at the top of your MDX file (if required by your setup)
-2. Use them directly in your MDX content
-
-```mdx
-import { Button } from "@/components/ui/button"
-import { Alert, AlertDescription } from "@/components/ui/alert"
-
-# My Page
-
-<Button>Click me</Button>
-
-<Alert>
-  <AlertDescription>
-    This is an important message.
-  </AlertDescription>
-</Alert>
-```
-
-## Component Examples
-
-### Basic UI Components
-
-```mdx
-<Button variant="outline">Click me</Button>
-
-<Input placeholder="Enter your name" />
-
-<Table>
-  <TableHeader>
-    <TableRow>
-      <TableHead>Name</TableHead>
-      <TableHead>Status</TableHead>
-    </TableRow>
-  </TableHeader>
-  <TableBody>
-    <TableRow>
-      <TableCell>John</TableCell>
-      <TableCell>Active</TableCell>
-    </TableRow>
-  </TableBody>
-</Table>
-```
-
-### Documentation Components
-
-```mdx
-<ComponentPreview name="button-demo" />
-
-<Steps>
-  <Step>First, install the dependencies</Step>
-  <Step>Then, import the component</Step>
-  <Step>Finally, use it in your code</Step>
-</Steps>
-
-<Callout>
-  Important: Make sure to follow the installation instructions.
-</Callout>
-```
-
-### Navigation Components
-
-```mdx
-<NavigationMenu>
-  <NavigationMenuList>
-    <NavigationMenuItem>
-      <NavigationMenuTrigger>Getting Started</NavigationMenuTrigger>
-      <NavigationMenuContent>
-        <NavigationMenuLink>Documentation</NavigationMenuLink>
-      </NavigationMenuContent>
-    </NavigationMenuItem>
-  </NavigationMenuList>
-</NavigationMenu>
-
-<Breadcrumb>
-  <BreadcrumbList>
-    <BreadcrumbItem>
-      <BreadcrumbLink href="/">Home</BreadcrumbLink>
-    </BreadcrumbItem>
-    <BreadcrumbSeparator />
-    <BreadcrumbItem>
-      <BreadcrumbPage>Documentation</BreadcrumbPage>
-    </BreadcrumbItem>
-  </BreadcrumbList>
-</Breadcrumb>
-```
-
-### Interactive Components
-
-```mdx
-<Carousel>
-  <CarouselContent>
-    <CarouselItem>Slide 1</CarouselItem>
-    <CarouselItem>Slide 2</CarouselItem>
-  </CarouselContent>
-  <CarouselPrevious />
-  <CarouselNext />
-</Carousel>
-
-<DatePicker />
-
-<InputOTP maxLength={6}>
-  <InputOTPGroup>
-    <InputOTPSlot index={0} />
-    <InputOTPSlot index={1} />
-    <InputOTPSlot index={2} />
-  </InputOTPGroup>
-</InputOTP>
-```
-
-## Best Practices
-
-1. **Component Organization**
-   - Group related components together
-   - Use semantic structure (headings, sections)
-   - Keep content well-organized with appropriate spacing
-
-2. **Accessibility**
-   - Include proper ARIA labels
-   - Maintain heading hierarchy
-   - Provide alt text for images
-   - Use semantic HTML elements
-   - Ensure keyboard navigation works
-
-3. **Performance**
-   - Import only the components you need
-   - Use `ComponentPreview` for complex examples
-   - Leverage code splitting when possible
-   - Optimize images and media content
-   - Use loading states appropriately
-
-4. **Styling**
-   - Use consistent spacing and layout
-   - Follow the shadcn/ui design system
-   - Apply custom styles through className props
-   - Maintain responsive design principles
-   - Use theme variables for consistency
-
-5. **Documentation**
-   - Include examples for complex components
-   - Document props and variants
-   - Provide context for usage
-   - Show common patterns and combinations
-   - Include error handling examples
-
-## Advanced Usage
-
-### Composing Components
-
-You can compose multiple components together to create more complex interfaces:
-
-```mdx
-<Card>
-  <CardHeader>
-    <CardTitle>User Profile</CardTitle>
-  </CardHeader>
-  <CardContent>
-    <Form>
-      <Input placeholder="Username" />
-      <Button>Save</Button>
-    </Form>
-  </CardContent>
-</Card>
-```
-
-### Interactive Examples
-
-Use `ComponentPreview` to show interactive examples:
+The `ComponentPreview` component displays live, interactive examples of your components. It provides a sandbox environment where users can see the component in action.
 
 ```mdx
 <ComponentPreview
   name="button-demo"
-  description="A collection of button variants."
+  description="A collection of button variants"
+  className="[&_button]:mr-2"
 />
 ```
 
-### Data Tables
+#### ComponentSource
 
-Create advanced data tables with sorting and filtering:
-
-```mdx
-<DataTable
-  columns={columns}
-  data={data}
-  searchKey="title"
-  pagination
-  filtering
-/>
-```
-
-### Responsive Layouts
-
-Use resizable components for flexible layouts:
+The `ComponentSource` component shows the source code of a component with syntax highlighting.
 
 ```mdx
-<ResizablePanelGroup direction="horizontal">
-  <ResizablePanel>Sidebar</ResizablePanel>
-  <ResizableHandle />
-  <ResizablePanel>Main Content</ResizablePanel>
-</ResizablePanelGroup>
+<ComponentSource name="button" />
 ```
 
-### Loading States
+#### Steps
 
-Implement loading states with skeleton components:
+The `Steps` component creates structured, numbered step-by-step guides.
+
+````mdx
+<Steps>
+  <Step>Install the dependencies</Step>
+  <Step>Import the component</Step>
+  <Step>
+    Add it to your code: ```tsx
+    <Button>Click me</Button>
+    ```
+  </Step>
+</Steps>
+````
+
+<CodeTabs>
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @radix-ui/react-accordion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="accordion" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+</CodeTabs>
+
+#### Callout
+
+The `Callout` component highlights important information, warnings, or tips.
 
 ```mdx
-<Skeleton className="h-[20px] w-[100px] rounded-full" />
-<Skeleton className="h-[200px] w-[100%] rounded-md" />
+<Callout>This is an important note about usage.</Callout>
+
+<Callout type="warning">Be careful when modifying these settings.</Callout>
 ```
 
-Remember that all shadcn/ui components are built with accessibility in mind and follow best practices for web development. Use them consistently throughout your documentation for the best user experience.
+<div className="grid grid-cols-1 gap-2">
+  <Callout>This is an important note about usage.</Callout>
+
+  <Callout type="warning">Be careful when modifying these settings.</Callout>
+</div>
+
+#### CodeTabs
+
+The `CodeTabs` component organizes different code examples or installation methods in tabs.
+
+````mdx
+<CodeTabs>
+  <TabsList>
+    <TabsTrigger value="npm">npm</TabsTrigger>
+    <TabsTrigger value="yarn">yarn</TabsTrigger>
+    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
+  </TabsList>
+  <TabsContent value="npm">```bash npm install @radix-ui/react-tabs ```</TabsContent>
+  <TabsContent value="yarn">```bash yarn add @radix-ui/react-tabs ```</TabsContent>
+  <TabsContent value="pnpm">```bash pnpm add @radix-ui/react-tabs ```</TabsContent>
+</CodeTabs>
+````
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add accordion
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @radix-ui/react-accordion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="accordion" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+#### Codeblock
+
+The `Codeblock` component displays code blocks with syntax highlighting.
+
+```tsx title="Example" showLineNumbers {4-6}
+// 33% of the carousel width.
+<Carousel>
+  <CarouselContent>
+    <CarouselItem className="basis-1/3">...</CarouselItem>
+    <CarouselItem className="basis-1/3">...</CarouselItem>
+    <CarouselItem className="basis-1/3">...</CarouselItem>
+  </CarouselContent>
+</Carousel>
+```
