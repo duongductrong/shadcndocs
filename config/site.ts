@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "shadcn/docs",
-  url: "https://docs.shadcn.com",
-  ogImage: "https://docs.shadcn.com/og.jpg",
+  url: "https://shadcn-docs.vercel.app",
+  ogImage: "https://shadcn-docs.vercel.app/og.jpg",
   description:
     "A documentation template for building beautiful documentation sites with Next.js and MDX. Open Source. Open Code.",
   links: {
