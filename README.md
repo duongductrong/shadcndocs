@@ -5,7 +5,7 @@ A comprehensive documentation site built with MDX and shadcn/ui components.
 [![shadcn/ui](https://img.shields.io/badge/shadcn/docs-000000?style=for-the-badge&logo=shadcn&logoColor=white)](https://shadcn-docs.vercel.app)
 [![github](https://img.shields.io/badge/github-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/duongductrong/shadcn-docs)
 
-![shadcn/thumbnail](./thumbnail.png)
+![shadcn/thumbnail](./thumbnail-darkmode.png)
 
 ## Overview
 
