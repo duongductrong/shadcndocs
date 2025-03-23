@@ -37,18 +37,24 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
-          title: "components.json",
-          href: "/docs/components-json",
-          items: [],
-        },
-        {
-          title: "CLI",
-          href: "/docs/cli",
-          items: [],
-        },
-        {
           title: "Changelog",
           href: "/docs/changelog",
+          items: [],
+        },
+      ],
+    },
+    {
+      title: "Configuration",
+      label: "Core",
+      items: [
+        {
+          title: "docs.ts",
+          href: "/docs/docs-config",
+          items: [],
+        },
+        {
+          title: "site.ts",
+          href: "/docs/site-config",
           items: [],
         },
       ],
