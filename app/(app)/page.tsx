@@ -2,7 +2,7 @@ import { Metadata } from "next"
 import Link from "next/link"
 
 import { Announcement } from "@/components/announcement"
-import { CardsDemo } from "@/components/card-demo"
+import { CardsDemo } from "@/components/cards-demo"
 import { ExamplesNav } from "@/components/examples-nav"
 import {
   PageActions,
