@@ -1,0 +1,217 @@
+---
+title: "Components"
+description: "Documentation for components"
+---
+
+### ComponentPreview
+
+Use `ComponentPreview` to showcase live examples:
+
+```mdx
+<ComponentPreview name="button-demo" description="Interactive button examples" />
+```
+
+### Code Blocks
+
+Display code with syntax highlighting:
+
+```tsx showLineNumbers title="Example Component"
+export function Example() {
+  return (
+    <div className="rounded-md border p-4">
+      <h2>Example Component</h2>
+      <p>This is an example component.</p>
+    </div>
+  )
+}
+```
+
+### Steps
+
+Create step-by-step guides:
+
+<Steps>
+  <Step>First, install the dependencies</Step>
+  <Step>Then, import the components</Step>
+  <Step>Finally, use them in your MDX</Step>
+</Steps>
+
+### Callouts
+
+Highlight important information:
+
+<br />
+
+<Callout>This is an important note about using components in MDX.</Callout>
+
+<br />
+
+<Callout type="warning">Be careful when modifying these settings.</Callout>
+
+### Table
+
+Display data in a table:
+
+```tsx
+| Prop      | Type                                                                                    | Default     | Description                                                                                         |
+| --------- | --------------------------------------------------------------------------------------- | ----------- | --------------------------------------------------------------------------------------------------- |
+| variant   | `"default"` \| `"destructive"` \| `"outline"` \| `"secondary"` \| `"ghost"` \| `"link"` | `"default"` | The visual style variant of the button                                                              |
+| size      | `"default"` \| `"sm"` \| `"lg"` \| `"icon"`                                             | `"default"` | The size of the button                                                                              |
+| asChild   | `boolean`                                                                               | `false`     | Change the default rendered element for the one passed as a child, merging their props and behavior |
+| disabled  | `boolean`                                                                               | `false`     | When true, prevents the user from interacting with the button                                       |
+| className | `string`                                                                                | `""`        | Additional CSS classes to add to the button                                                         |
+| onClick   | `(event: MouseEvent) => void`                                                           | -           | Event handler called when the button is clicked                                                     |
+
+```
+
+| Prop      | Type                                                                                    | Default     | Description                                                                                         |
+| --------- | --------------------------------------------------------------------------------------- | ----------- | --------------------------------------------------------------------------------------------------- |
+| variant   | `"default"` \| `"destructive"` \| `"outline"` \| `"secondary"` \| `"ghost"` \| `"link"` | `"default"` | The visual style variant of the button                                                              |
+| size      | `"default"` \| `"sm"` \| `"lg"` \| `"icon"`                                             | `"default"` | The size of the button                                                                              |
+| asChild   | `boolean`                                                                               | `false`     | Change the default rendered element for the one passed as a child, merging their props and behavior |
+| disabled  | `boolean`                                                                               | `false`     | When true, prevents the user from interacting with the button                                       |
+| className | `string`                                                                                | `""`        | Additional CSS classes to add to the button                                                         |
+| onClick   | `(event: MouseEvent) => void`                                                           | -           | Event handler called when the button is clicked                                                     |
+
+### Tabs
+
+Display content in tabs:
+
+````tsx
+<CodeTabs>
+  <Tabs>
+    <TabsList>
+      <TabsTrigger value="react">React</TabsTrigger>
+      <TabsTrigger value="vue">Vue</TabsTrigger>
+    </TabsList>
+    <TabsContent value="react">```tsx ```</TabsContent>
+    <TabsContent value="vue">```tsx ```</TabsContent>
+  </Tabs>
+</CodeTabs>
+````
+
+<CodeTabs>
+  
+<Tabs defaultValue="react">
+
+<TabsList>
+
+<TabsTrigger value="react">React</TabsTrigger>
+
+<TabsTrigger value="vue">Vue</TabsTrigger>
+
+</TabsList>
+
+<TabsContent value="react">
+
+```tsx
+function Example() {
+  return <div>Example</div>
+}
+```
+
+</TabsContent>
+
+<TabsContent value="vue">
+
+```tsx
+<template>
+  <div>Example</div>
+</template>
+
+<script>
+export default {
+  name: 'Example'
+}
+</script>
+```
+
+</TabsContent>
+
+</Tabs>
+
+</CodeTabs>
+
+### Inline Code
+
+Display inline code:
+
+```tsx
+`npm install @shadcn/ui`
+```
+
+`npm install @shadcn/ui`
+
+### Codeblock
+
+Display code with syntax highlighting:
+
+```tsx
+interface User {
+  id: string
+  name: string
+  email: string
+  role: "admin" | "user"
+  metadata?: {
+    lastLogin: Date
+    preferences: {
+      theme: "light" | "dark"
+      notifications: boolean
+    }
+  }
+}
+
+class UserService {
+  private users: Map<string, User> = new Map()
+
+  async createUser(userData: Omit<User, "id">): Promise<User> {
+    const id = crypto.randomUUID()
+    const user: User = {
+      id,
+      ...userData,
+      metadata: {
+        lastLogin: new Date(),
+        preferences: {
+          theme: "light",
+          notifications: true,
+        },
+      },
+    }
+
+    this.users.set(id, user)
+    return user
+  }
+
+  async getUserById(id: string): Promise<User | undefined> {
+    const user = this.users.get(id)
+    if (!user) {
+      throw new Error(`User with id ${id} not found`)
+    }
+    return user
+  }
+
+  async updateUserPreferences(
+    id: string,
+    preferences: Partial<User["metadata"]["preferences"]>
+  ): Promise<User> {
+    const user = await this.getUserById(id)
+    if (!user.metadata) {
+      user.metadata = {
+        lastLogin: new Date(),
+        preferences: {
+          theme: "light",
+          notifications: true,
+        },
+      }
+    }
+
+    user.metadata.preferences = {
+      ...user.metadata.preferences,
+      ...preferences,
+    }
+
+    this.users.set(id, user)
+    return user
+  }
+}
+```
