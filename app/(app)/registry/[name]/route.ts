@@ -32,7 +32,10 @@ export async function GET(request: Request, { params }: { params: Promise<{ name
       registryItem.files.map(async (file) => {
         const filePath = path.join(process.cwd(), file.path)
         const content = await fs.readFile(filePath, "utf8")
-        return { ...file, content }
+
+        const serializedContent = content.replace(/\@\/registry\/new-york\/ui/g, "@/components/ui")
+
+        return { ...file, content: serializedContent }
       })
     )
 
