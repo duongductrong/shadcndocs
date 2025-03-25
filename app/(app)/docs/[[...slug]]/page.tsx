@@ -12,7 +12,7 @@ import { DocsPager } from "@/components/pager"
 import { DashboardTableOfContents } from "@/components/toc"
 import { getTableOfContents } from "@/lib/toc"
 import { absoluteUrl, cn } from "@/lib/utils"
-import { badgeVariants } from "@/registry/new-york/ui/badge"
+import { badgeVariants } from "@/components/ui/badge"
 
 interface DocPageProps {
   params: {

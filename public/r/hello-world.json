@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hello-world",
+  "type": "registry:component",
+  "title": "Hello World",
+  "description": "A simple hello world component",
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/new-york/components/hello-world.tsx",
+      "content": "import React from \"react\"\nimport { Button } from \"@/components/ui/button\"\n\ntype Props = {}\n\nconst HelloWorld = (props: Props) => {\n  return (\n    <div>\n      <Button>Hello World</Button>\n    </div>\n  )\n}\n\nexport default HelloWorld\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -11,7 +11,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "registry/labs/hello-world.tsx",
+          "path": "registry/new-york/components/hello-world.tsx",
           "type": "registry:component"
         }
       ]

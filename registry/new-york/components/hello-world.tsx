@@ -1,5 +1,5 @@
 import React from "react"
-import { Button } from "@/registry/new-york/ui/button"
+import { Button } from "@/components/ui/button"
 
 type Props = {}
 
